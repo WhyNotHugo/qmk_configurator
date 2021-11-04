@@ -1,0 +1,11 @@
+{
+  "keyboard": "meishi",
+  "keymap": "default",
+  "commit": "fe6d6cf76dc827adb2f46d55217dc189eae21b02",
+  "layout": "LAYOUT",
+  "layers": [
+    [
+      "LCTL(KC_Z)", "LCTL(KC_X)", "LCTL(KC_C)", "LCTL(KC_V)"
+    ]
+  ]
+}
