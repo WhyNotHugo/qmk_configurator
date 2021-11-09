@@ -17,9 +17,8 @@ RUN yarn run build
 ## Second Stage- Run
 FROM nginx as run
 EXPOSE 80/tcp
+ENV QMK_API_URL="https://api.qmk.fm"
 
 COPY --from=build /qmk_configurator/dist /qmk_configurator/dist
-COPY conf/nginx.conf.in /etc/nginx/nginx.conf.in
-COPY bin/docker_run.sh /qmk_configurator/bin/docker_run.sh
-
-CMD /bin/bash -i /qmk_configurator/bin/docker_run.sh
+COPY conf/nginx.conf.in /etc/nginx/templates/default.conf.template
+COPY bin/docker_run.sh /docker-entrypoint.d/qmk_configurator.sh
